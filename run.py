@@ -56,4 +56,21 @@ def get_guess(board_size):
 
 
         # if the guess is not valid, print error message and loop again
-        print("Invalid guess. Please enter numbers between 0 and {}".format(board_size - 1))
+        print("Invalid guess. Please enter numbers between 0 and {}.".format(board_size - 1))
+
+
+# function to check if guess hit ship
+def check_guess(guess_row, guess_col, board):
+    # if guess hit ship, print success message and mark position as hit
+    if board[guess_row][guess_col] == "S":
+        print("You sunk my ship :'(")
+        board[guess_row][guess_col] = "X"
+        return True
+    # if guess has already been hit, print error message
+    elif board[guess_row][guess_col] == "X":
+        print("This ship has already sunk...")
+    # if the guessed position does not contain a ship, print fail message
+    else:
+        print("hahaha you missed!")
+        board[guess_row][guess_col] = "M"
+    return False
