@@ -1,31 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleship Game
 
-Welcome Felix,
+This is a simple implementation of the classic Battleship game in Python. The game is played between the user and the computer. The user enters the size of the game board and places their ships on the board. The computer also places its ships randomly on the board. The game then starts and the user and computer take turns guessing the location of the other's ships. The first player to sink all of the other's ships wins the game.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Usage
 
-## Reminders
+To play the game, simply run the `battleship.py` file in your Python environment:
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+The game will then prompt you to enter the size of the game board and the label for your board. You will then be prompted to place your ships on the board. After you have placed your ships, the computer will randomly place its ships. The game will then start and you will be prompted to guess the location of the computer's ships. The computer will also guess the location of your ships. The game continues until one player has sunk all of the other's ships.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Implementation
 
-1. `heroku/python`
-2. `heroku/nodejs`
+The game is implemented using Python 3. The `battleship.py` file contains all the code necessary to run the game. The code is divided into several functions:
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+- `create_board`: Creates a new game board of the given size with all cells initialized to "O" (representing empty sea).
+- `print_board`: Prints the current state of the game board to the console.
+- `place_ships`: Places a specified number of ships randomly on the game board.
+- `get_guess`: Prompts the user to enter a row and column number for their guess and returns the guess as a tuple.
+- `check_guess`: Checks whether the user's guess hit a ship and updates the game board accordingly.
+- `is_game_over`: Checks whether the game is over (i.e., whether all ships have been sunk or the maximum number of turns has been reached).
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+The main function `play_game` is responsible for running the game. It prompts the user for the size of the game board and the label for their board, creates the user's board and the computer's board, places the computer's ships, and then enters a loop where the user and the computer take turns guessing the location of each other's ships. The loop continues until one player has sunk all of the other's ships or the maximum number of turns has been reached.
 
-Connect your GitHub repository and deploy as normal.
+## License
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
