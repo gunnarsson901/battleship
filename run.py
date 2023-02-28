@@ -1,3 +1,8 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+#The "create_board" function creates a board of the given size with all cells initialized to "O" (representing empty sea).
+def create_board(board_size, label):
+    board = []
+    for i in range(board_size):
+        row = []
+        for j in range(board_size):
+            row.append("O")
+        board.append(row)
