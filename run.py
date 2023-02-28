@@ -74,3 +74,11 @@ def check_guess(guess_row, guess_col, board):
         print("hahaha you missed!")
         board[guess_row][guess_col] = "M"
     return False
+
+# function to check whether the game is over
+def is_game_over(board, max_turns):
+    # count the number of remaining ships on the board
+    num_ships = 0
+    for row in board:
+        num_ships += row.count("S")
+    return num_ships == 0 or max_turns == 0
