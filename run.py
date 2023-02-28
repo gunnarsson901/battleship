@@ -37,3 +37,23 @@ def place_ships(board, num_ships):
     board[ship_row][ship_col] = "S" 
 
 
+# function to get guess from user
+def get_guess(board_size):
+    # loop until a valid guess is entered
+    while True:
+        # prompt user for a row or column number
+        guess_row = input("Guess Row (0-{}): ".format((board_size - 1)))
+        guess_col = input("Guess Col (0-{}): ".format((board_size - 1)))
+
+        # if both inputs are digits, convert the to integers
+        if guess_row.isdigit() and guess_col.isdigit():
+            guess_row = int(guess_row)
+            guess_col = int(guess_col)
+
+            # If both inputs are digits, convert them to integers
+            if guess_row in range(board_size) and guess_col in range(board_size):
+                return guess_row, guess_col
+
+
+        # if the guess is not valid, print error message and loop again
+        print("Invalid guess. Please enter numbers between 0 and {}".format(board_size - 1))
