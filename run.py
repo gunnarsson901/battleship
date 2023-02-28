@@ -82,3 +82,48 @@ def is_game_over(board, max_turns):
     for row in board:
         num_ships += row.count("S")
     return num_ships == 0 or max_turns == 0
+
+
+# main function, start game
+def play_game():
+    print("Welcome to BattleShip!")
+    
+    # specify board size
+    board_size = int(input("Enter the size of the game board: "))
+    computer_board = create_board(board_size, "Computer")
+
+    # specify name displayed on users board
+    user_label = input("Enter a label for your board: ")
+    user_board = create_board(board_size, user_label)
+
+    num_ships = int(board_size ** 2 * 0.2)
+
+    # place the ships randomly on the computers board
+    place_ships(computer_board, num_ships)
+
+    # maximum number of turns for the game
+    max_turns = 4
+
+    # loop through each turn
+    for turn in range(max_turns):
+        print("Turn", turn +1)
+
+        # display the computer's board to user
+        print("computer Board:")
+        print_board(computer_board)
+
+        # get user's guess
+        guess_row, guess_col = get_guess(board_size)
+
+        # check if the users guess hit a ship
+        if check_guess(guess_row, guess_col, computer_board):
+            break
+
+        # check if game won
+        if is_game_over(computer_board, max_turns - turn -1):
+            print("Congratulation! You won!")
+            break
+
+    # check if game lost
+    if not is_game_over(computer_board, max_turns):
+        print("GAME OVER, computer wins.")
