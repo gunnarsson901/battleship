@@ -126,4 +126,8 @@ def play_game():
 
     # check if game lost
     if not is_game_over(computer_board, max_turns):
-        print("GAME OVER, computer wins.")
+        print("GAME OVER, computer wins..")
+
+# function is only executed if the script is being run as the main program
+if __name__ == "__main__":
+    play_game()
