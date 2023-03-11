@@ -4,7 +4,7 @@ This is a simple implementation of the classic Battleship game in Python. The ga
 
 ## Usage
 
-To play the game, simply run the `battleship.py` file in your Python environment:
+To play the game, simply run the `battleship.py` file in your Python environment or use the [heroku website](https://boat-pop.herokuapp.com/):
 
 
 The game will then prompt you to enter the size of the game board and the label for your board. You will then be prompted to place your ships on the board. After you have placed your ships, the computer will randomly place its ships. The game will then start and you will be prompted to guess the location of the computer's ships. The computer will also guess the location of your ships. The game continues until one player has sunk all of the other's ships.
@@ -25,3 +25,9 @@ The main function `play_game` is responsible for running the game. It prompts th
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more information.
+
+
+## Issues
+
+- The license.json was not properly added to the file
+- Pip install -r requirements.txt did not work to update the requirements file
